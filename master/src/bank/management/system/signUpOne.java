@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class signUpOne extends JFrame implements ActionListener{
     long random;
-    JTextField nameTextField,fatherTextField,emailTextField,addressTextField,cityTextField,stateTextField,pinTextField;
+    JTextField nameTextField,fatherTextField,DateofBirthTextField,emailTextField,addressTextField,cityTextField,stateTextField,pinTextField;
     JButton button;
     JRadioButton male,female,married,unmarried, others;
     signUpOne(){
@@ -58,11 +58,17 @@ public class signUpOne extends JFrame implements ActionListener{
         add(fatherTextField);
         
 //        Date of Birth
-        JLabel dob=new JLabel("Tanggal Lahir: ");
-        dob.setFont(new Font("Raleway", Font.BOLD,20));
-        dob.setBounds(100,240,200,30);
-        add(dob);
-        
+        JLabel DateofBirth=new JLabel("Tanggal Lahir: ");
+        DateofBirth.setFont(new Font("Raleway", Font.BOLD,20));
+        DateofBirth.setBounds(100,240,200,30);
+        add(DateofBirth);
+
+//        Date of Birth Textfield
+        DateofBirthTextField=new JTextField();
+        DateofBirthTextField.setFont(new Font("Raleway", Font.BOLD,22));
+        DateofBirthTextField.setBounds(300,240,400,30);
+        add(DateofBirthTextField);
+
 //        Gender
         JLabel gender=new JLabel("Jenis Kelamin: ");
         gender.setFont(new Font("Raleway", Font.BOLD,20));
@@ -217,7 +223,7 @@ public class signUpOne extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null,"Name is Required");
             }else{
                 conn c=new conn();
-                String q1 = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pin+"','"+state+"')";
+                String q1 = "insert into bank_account_registration values('"+formno+"','"+name+"','"+fname+"','"+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pin+"','"+state+"')";
                 c.s.executeUpdate(q1);
                 
                 setVisible(false);

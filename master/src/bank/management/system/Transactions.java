@@ -43,7 +43,7 @@ public class Transactions extends JFrame implements ActionListener{
         image.add(fastcash);
         fastcash.addActionListener(this);
         
-        mini =new JButton("Mini Statement");
+        mini =new JButton("Riwayat Transaksi");
         mini.setBounds(355,450,150,30);
         image.add(mini);
         mini.addActionListener(this);

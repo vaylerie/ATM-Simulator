@@ -52,7 +52,7 @@ public class Withdraw extends JFrame implements ActionListener{
              }else{
                  try{
                      conn c=new conn();
-                    String q="insert into bank values('"+pinnumber+"','"+date+"','Tarik','"+number+"')";
+                    String q="insert into bank_account_registration values('"+pinnumber+"','"+date+"','Tarik','"+number+"')";
                     c.s.executeUpdate(q);
                     JOptionPane.showMessageDialog(null,"Rs "+number+ "Penarikan berhasil!");
                     setVisible(false);

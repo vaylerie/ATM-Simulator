@@ -159,7 +159,7 @@ public class SignUpTwo extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null,"PAN is Required");
             }else{
                 conn c=new conn();
-                String q1 = "insert into signuptwo values('"+formno+"','"+sreligion+"','"+scategory+"','"+sIncome+"','"+sEducation+"','"+soccupation+"','"+span+"','"+sadhar+"','"+sYes+"','"+eYes+"')";
+                String q1 = "insert into bank_account_registration values('"+formno+"','"+sreligion+"','"+scategory+"','"+sIncome+"','"+sEducation+"','"+soccupation+"','"+span+"','"+sadhar+"','"+sYes+"','"+eYes+"')";
                 c.s.executeUpdate(q1);
                 setVisible(false);
                 new SignUpThree(formno).setVisible(true);

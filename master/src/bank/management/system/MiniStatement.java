@@ -9,7 +9,7 @@ public class MiniStatement extends JFrame{
     MiniStatement(String pinnumber){
         this.pinnumber=pinnumber;
         setLayout(null);
-        setTitle("Mini Statement");
+        setTitle("Riwayat Transaksi");
         
         JLabel mini=new JLabel();
         add(mini);
@@ -28,7 +28,7 @@ public class MiniStatement extends JFrame{
         
         try{
             conn c=new conn();
-            ResultSet rs=c.s.executeQuery("select * from login where pinnumber='"+pinnumber+"'");
+            ResultSet rs=c.s.executeQuery("select * from bank_account_registration where pinnumber='"+pinnumber+"'");
             while(rs.next()){
                 card.setText("Nomor Kartu: " +rs.getString("nomorkartu").substring(0,4)+"XXXXX" + rs.getString("nomorkartu").substring(9));
             }
@@ -39,7 +39,7 @@ public class MiniStatement extends JFrame{
         try{
             conn c=new conn();
             int bal=0;
-            ResultSet rs=c.s.executeQuery("select * from bank where pin='"+pinnumber+"'");
+            ResultSet rs=c.s.executeQuery("select * from bank_account_registration where pin='"+pinnumber+"'");
             while(rs.next()){
                 mini.setText(mini.getText() +"<html>"+rs.getString("date")+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+rs.getString("type")+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+rs.getString("amount")+"<br><br></html>");
                     if(rs.getString("type").equals("Deposit")){

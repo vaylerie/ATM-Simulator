@@ -189,8 +189,8 @@ public class SignUpThree extends JFrame implements ActionListener{
                     JOptionPane.showMessageDialog(null,"Account Type is Required");
                 }else{
                     conn c=new conn();
-                    String q1 = "insert into signupthree values('"+formno+"','"+accountType+"','"+cardNumber+"','"+pinNumber+"','"+facility+"')";
-                     String q2 = "insert into login values('"+formno+"','"+cardNumber+"','"+pinNumber+"')";
+                    String q1 = "insert into bank_account_registration values('"+formno+"','"+accountType+"','"+cardNumber+"','"+pinNumber+"','"+facility+"')";
+                     String q2 = "insert into bank_account_registration values('"+formno+"','"+cardNumber+"','"+pinNumber+"')";
                     c.s.executeUpdate(q1);
                     c.s.executeUpdate(q2);
                     JOptionPane.showMessageDialog(null,"Card Number: "+ cardNumber+"\nPin:"+pinNumber);

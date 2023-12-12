@@ -6,7 +6,7 @@ public class ConnectDb {
     public static void main(String[] args) {
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/atm", "root", "");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/atm_simulaator", "root", "");
             Statement statement =  connection.createStatement();
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM bank_account_registration");

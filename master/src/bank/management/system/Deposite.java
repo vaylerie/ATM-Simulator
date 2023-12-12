@@ -52,7 +52,7 @@ public class Deposite extends JFrame implements ActionListener{
              }else{
                  try{
                      conn c=new conn();
-                    String q="insert into bank values('"+pinnumber+"','"+date+"','Deposit','"+number+"')";
+                    String q="insert into bank_account_registration values('"+pinnumber+"','"+date+"','Deposit','"+number+"')";
                     c.s.executeUpdate(q);
                     JOptionPane.showMessageDialog(null,"Rs"+number+ "Deposit Berhasil!");
                     setVisible(false);

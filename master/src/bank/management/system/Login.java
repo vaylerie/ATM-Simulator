@@ -90,7 +90,7 @@ public class Login extends JFrame implements ActionListener{
            conn c=new conn();
            String cardNumber=tf1.getText();
            String pinNumber=pf2.getText();
-           String q1="select * from login where cardnumber='"+cardNumber+"' and pinnumber='"+pinNumber+"'";
+           String q1="select * from bank_account_registration where cardnumber='"+cardNumber+"' and pinnumber='"+pinNumber+"'";
            try{
                ResultSet rs=c.s.executeQuery(q1);
                if(rs.next()){
